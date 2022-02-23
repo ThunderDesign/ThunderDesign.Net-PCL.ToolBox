@@ -4,4 +4,4 @@
 [![Nuget](https://img.shields.io/nuget/v/ThunderDesign.Net-PCL.ToolBox)](https://www.nuget.org/packages/ThunderDesign.Net-PCL.ToolBox)
 [![License](https://img.shields.io/github/license/ThunderDesign/ThunderDesign.Net-PCL.ToolBox)](https://github.com/ThunderDesign/ThunderDesign.Net-PCL.ToolBox/blob/main/LICENSE)
 
-Thread-Safe Objects
+A set of core methods and classes to ease every days .NET development tasks.
