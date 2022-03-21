@@ -6,6 +6,7 @@ namespace ThunderDesign.Net.ToolBox.Extentions
 {
     public static class EnumExtentions
     {
+#if NETSTANDARD2_0 || NETSTANDARD2_1
         public static string GetDescription(this Enum en)
         {
             Type type = en.GetType();
@@ -20,6 +21,7 @@ namespace ThunderDesign.Net.ToolBox.Extentions
             }
             return en.ToString();
         }
+#endif
 
         public static int AsIndex(this Enum value)
         {

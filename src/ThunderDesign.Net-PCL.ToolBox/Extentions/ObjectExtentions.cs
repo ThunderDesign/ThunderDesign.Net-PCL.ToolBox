@@ -5,6 +5,7 @@ namespace ThunderDesign.Net.ToolBox.Extentions
 {
     public static class ObjectExtentions
     {
+#if NETSTANDARD2_0 || NETSTANDARD2_1
         public static bool Copy(this object self, object source, string property)
         {
             if (source == null || self == null || string.IsNullOrEmpty(property))
@@ -21,6 +22,7 @@ namespace ThunderDesign.Net.ToolBox.Extentions
             }
             return false;
         }
+#endif
 
         public static bool IsEqual(this object self, object value)
         {

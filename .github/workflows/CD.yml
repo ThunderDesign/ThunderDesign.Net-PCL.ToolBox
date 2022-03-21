@@ -7,7 +7,7 @@ on:
 env:
   TITLE: ".NET Development ToolBox"
   DESCRIPTION: "A set of core methods and classes to ease every days .NET development tasks."
-  TAGS: "thunderdesign net csharp"
+  TAGS: "thunderdesign toolbox visual%2Dstudio c%2Dsharp dotnet%2Dstandard dotnet%2Dframework dotnet%2Dcore cross%2Dplatform pcl%2Dlibrary mono xamarin%2Dforms xamarin%2Dandroid xamarin%2Dios xamarin%2Dmac xamarin%2Duwp unity csharp net dotnet"
   #FILE_NAME: ex: "ThunderDesign.Net-PCL.ToolBox"
   FILE_NAME: "${{ github.event.repository.name }}"
   #REPOSITORY_NAME: ex: "ThunderDesign.Net-PCL.ToolBox"
@@ -16,7 +16,7 @@ env:
   REPOSITORY_OWNER: ${{ github.repository_owner }}
   #GITHUB_URL: ex: "https://github.com/ThunderDesign"
   GITHUB_URL: ${{ github.server_url }}/${{ github.repository_owner }}
-  #REPOSITORY_URL: ex: "https://github.com/ThunderDesign/ThunderDesign.Net-PCL.Threading"
+  #REPOSITORY_URL: ex: "https://github.com/ThunderDesign/ThunderDesign.Net-PCL.ToolBox"
   REPOSITORY_URL: ${{ github.server_url }}/${{ github.repository_owner }}/${{ github.event.repository.name }}
  
   PACKAGE_OUTPUT_DIRECTORY: ${{ github.workspace }}\output
@@ -45,7 +45,7 @@ jobs:
       run: nuget restore ./src/${{ env.FILE_NAME}}.sln
       
     - name: Create NuGet Package
-      run: msbuild ./src/${{ env.FILE_NAME}}.sln -t:pack /p:VersionPrefix=${{ github.event.release.tag_name }} /p:Configuration=Release /p:Title="${{ env.TITLE }}" /p:Description="${{ env.DESCRIPTION }}" /p:PackageTags="${{ env.TAGS }}" /p:Authors=ThunderDesign /p:PackageProjectUrl=${{ env.GITHUB_URL }} /p:PackageLicenseExpression=MIT /p:RepositoryType=git /p:RepositoryUrl=${{ env.REPOSITORY_URL }} /p:PackageReleaseNotes="See ${{ env.REPOSITORY_URL }}/releases/tag/${{ github.event.release.tag_name }}" /p:PackageOutputPath=${{ env.PACKAGE_OUTPUT_DIRECTORY}}
+      run: msbuild ./src/${{ env.FILE_NAME}}.sln -t:pack /p:VersionPrefix=${{ github.event.release.tag_name }} /p:Configuration=Release /p:Title="${{ env.TITLE }}" /p:Description="${{ env.DESCRIPTION }}" /p:PackageTags="${{ env.TAGS }}" /p:Authors=ThunderDesign /p:PackageProjectUrl=${{ env.GITHUB_URL }} /p:PackageLicenseExpression=MIT /p:RepositoryType=git /p:RepositoryUrl=${{ env.REPOSITORY_URL }} /p:PackageReleaseNotes="See ${{ env.REPOSITORY_URL }}/releases/tag/${{ github.event.release.tag_name }}" /p:PackageReadmeFile="README.md" /p:PackageOutputPath=${{ env.PACKAGE_OUTPUT_DIRECTORY}}
       
     - name: Archive NuGet Package
       uses: actions/upload-artifact@v2.3.1
