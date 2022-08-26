@@ -22,7 +22,7 @@ namespace ThunderDesign.Net.ToolBox.Extentions
             }
             else if (sourcePropertyInfo.PropertyType.IsArray && sourcePropertyInfo.PropertyType.GetElementType().CanDirectlyCompare())
             {
-                targetPropertyInfo.SetValue(self, ((Array)sourcePropertyInfo.GetValue(source)).Clone(), null);
+                targetPropertyInfo.SetValue(self, ((Array)sourcePropertyInfo.GetValue(source))?.Clone(), null);
                 return true;
             }
 
