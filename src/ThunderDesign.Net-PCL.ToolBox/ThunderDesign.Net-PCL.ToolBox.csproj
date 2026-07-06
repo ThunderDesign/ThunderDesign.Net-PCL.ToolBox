@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>netstandard1.0;netstandard2.0;net461</TargetFrameworks>
@@ -8,6 +8,10 @@
 	<PropertyGroup Condition=" '$(TargetFramework)' == 'net461' ">
 		<DefineConstants>NETSTANDARD1_4</DefineConstants>
 	</PropertyGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
+		<Compile Remove="**\EqualityHelper.cs" />
+		<None Include="**\EqualityHelper.cs" Pack="false" />
+	</ItemGroup>
 	<ItemGroup>
 		<None Include="..\..\README.md">
 			<Pack>True</Pack>

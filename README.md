@@ -21,6 +21,9 @@ A set of core methods and classes to ease every days .NET development tasks.
   - StringExtentions
   - TypeExtentions
 
+- Helpers
+  - EqualityHelper
+
 ----
 
 ## Installation
